@@ -4,6 +4,8 @@ Advent of Code 2022, written in Typescript.
 
 `npm i`
 
-Test against example input:`jest day-{x}/index.test.ts`
+Copy template for new day (e.g. 1): `cp -R day-template day-1`
 
-Run: `ts-node day-{x}/index.ts`
+Test against example input:`jest day-1/index.test.ts`
+
+Run: `ts-node day-1/index.ts`
