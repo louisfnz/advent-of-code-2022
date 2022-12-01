@@ -15,7 +15,7 @@ const exampleInputOne = `
 9000
 
 10000
-`.trim();
+`;
 
 const expectedAnswerPart1 = 24000;
 const expectedAnswerPart2 = 45000;

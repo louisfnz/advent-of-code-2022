@@ -1,10 +1,9 @@
 import {readFileSync} from 'fs';
 
-const input = readFileSync(__dirname + '/input.txt', 'utf-8');
+const input = readFileSync(__dirname + '/input.txt', 'utf-8').trim();
 
 const elfCaloriesSorted = (input: string) =>
   input
-    .trim()
     .split('\n\n')
     .reduce(
       (total, elf) =>

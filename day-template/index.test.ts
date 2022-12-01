@@ -6,7 +6,7 @@ Example input value 2
 Example input value 3
 Example input value 4
 Example input value 5
-`.trim();
+`;
 
 const expectedAnswerPart1 = 15;
 const expectedAnswerPart2 = 120;
