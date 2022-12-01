@@ -6,10 +6,11 @@ const elfCaloriesSorted = (input: string) =>
   input
     .trim()
     .split('\n\n')
-    .reduce((total, elf) => {
-      total.push(elf.split('\n').reduce((total, line) => total + Number(line), 0));
-      return total;
-    }, [] as number[])
+    .reduce(
+      (total, elf) =>
+        total.concat([elf.split('\n').reduce((total, line) => total + Number(line), 0)]),
+      [] as number[],
+    )
     .sort((a, b) => b - a);
 
 export const part1 = (input: string) => elfCaloriesSorted(input)[0];

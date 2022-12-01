@@ -2,7 +2,7 @@
   "semi": true,
   "trailingComma": "all",
   "singleQuote": true,
-  "printWidth": 200,
+  "printWidth": 100,
   "bracketSpacing": false,
   "editor.tabSize": 2,
   "editor.detectIndentation": true,
