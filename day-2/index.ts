@@ -59,15 +59,15 @@ export const part2 = (input: string) => {
   } as const;
 
   return getGames(input).reduce((total, game) => {
-    if (game[1] === 'Y') {
-      // Draw
-      total += 3 + scores[game[0]];
+    if (game[1] === 'Z') {
+      // Win
+      total += 6 + scores[winners[game[0]]];
     } else if (game[1] === 'X') {
       // Lose
       total += scores[losers[game[0]]];
     } else {
-      // Win
-      total += 6 + scores[winners[game[0]]];
+      // Draw
+      total += 3 + scores[game[0]];
     }
     return total;
   }, 0);
