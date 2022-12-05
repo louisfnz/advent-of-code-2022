@@ -15,7 +15,7 @@ move 1 from 1 to 2
 const expectedAnswerPart1 = 'CMZ';
 const expectedAnswerPart2 = 'MCD';
 
-describe('Day 4', () => {
+describe('Day 5', () => {
   it('Calculates part 1 correctly', () => {
     const result = part1(exampleInputOne);
     expect(result).toEqual(expectedAnswerPart1);
