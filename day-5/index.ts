@@ -3,21 +3,17 @@ import {readFileSync} from 'fs';
 const input = readFileSync(__dirname + '/input.txt', 'utf-8');
 
 const getStacks = (input: string) => {
-  const stacks = [] as string[][];
   const rows = input.split('\n\n')[0].split('\n');
-  rows.pop();
 
-  for (const row of rows) {
-    let s = 0;
+  return rows.slice(0, rows.length - 1).reduce((stacks, row) => {
     for (let i = 0; i < row.length; i++) {
-      if (i > 0 && i % 4 === 0) s = i / 4;
-      if ([' ', '[', ']'].includes(row[i])) continue;
+      if (!/\w/.test(row[i])) continue;
+      const s = Math.floor(i / 4);
       if (!stacks[s]) stacks[s] = [];
       stacks[s].push(row[i]);
     }
-  }
-
-  return stacks;
+    return stacks;
+  }, [] as string[][]);
 };
 
 const getMoves = (input: string) =>
