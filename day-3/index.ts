@@ -43,5 +43,7 @@ export const part2 = (input: string) => {
   return total;
 };
 
-console.log('Part 1: ', part1(input));
-console.log('Part 2: ', part2(input));
+if (require.main === module) {
+  console.log('Part 1:', part1(input));
+  console.log('Part 2:', part2(input));
+}

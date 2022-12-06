@@ -15,5 +15,7 @@ const findMarker = (s: string, length: number) => {
 export const part1 = (input: string) => findMarker(input.trim(), 4);
 export const part2 = (input: string) => findMarker(input.trim(), 14);
 
-console.log('Part 1: ', part1(input));
-console.log('Part 2: ', part2(input));
+if (require.main === module) {
+  console.log('Part 1:', part1(input));
+  console.log('Part 2:', part2(input));
+}
