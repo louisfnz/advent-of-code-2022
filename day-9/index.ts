@@ -41,15 +41,15 @@ export const part1 = (input: string) => {
   let headPos: Vector = [0, 0];
   let tailPos: Vector = [0, 0];
 
-  for (const direction of directions) {
-    const vector = directionVector(direction[0]);
+  for (const [direction, steps] of directions) {
+    const vector = directionVector(direction);
 
-    for (let i = 1; i <= direction[1]; i++) {
+    for (let i = 1; i <= steps; i++) {
       headPos = [headPos[0] + vector[0], headPos[1] + vector[1]];
 
       if (shouldFollow(headPos, tailPos)) {
-        const fd = followVector(headPos, tailPos);
-        tailPos = [tailPos[0] + fd[0], tailPos[1] + fd[1]];
+        const fv = followVector(headPos, tailPos);
+        tailPos = [tailPos[0] + fv[0], tailPos[1] + fv[1]];
         tailVisited.add(`${tailPos[0]},${tailPos[1]}`);
       }
     }
@@ -65,10 +65,10 @@ export const part2 = (input: string) => {
 
   let headPos: Vector = [0, 0];
 
-  for (const direction of directions) {
-    const vector = directionVector(direction[0]);
+  for (const [direction, steps] of directions) {
+    const vector = directionVector(direction);
 
-    for (let i = 1; i <= direction[1]; i++) {
+    for (let i = 1; i <= steps; i++) {
       headPos = [headPos[0] + vector[0], headPos[1] + vector[1]];
 
       for (let t = 0; t < 9; t++) {
@@ -77,8 +77,8 @@ export const part2 = (input: string) => {
         const back = tails[t];
 
         if (shouldFollow(front, back)) {
-          const fd = followVector(front, back);
-          tails[t] = [tails[t][0] + fd[0], tails[t][1] + fd[1]];
+          const fv = followVector(front, back);
+          tails[t] = [tails[t][0] + fv[0], tails[t][1] + fv[1]];
           if (t === 8) tailVisited.add(`${tails[t][0]},${tails[t][1]}`);
         } else {
           break;
