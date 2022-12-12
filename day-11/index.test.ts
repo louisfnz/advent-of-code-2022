@@ -1,6 +1,6 @@
 import {part2, part1} from './index';
 
-const exampleInputOne = `
+const input = `
 Monkey 0:
   Starting items: 79, 98
   Operation: new = old * 19
@@ -30,17 +30,17 @@ Monkey 3:
     If false: throw to monkey 1
 `;
 
-const expectedAnswerPart1 = 10605;
-const expectedAnswerPart2 = 2713310158;
+const answerPart1 = 10605;
+const answerPart2 = 2713310158;
 
 describe('Day 11', () => {
   it('Calculates part 1 correctly', () => {
-    const result = part1(exampleInputOne);
-    expect(result).toEqual(expectedAnswerPart1);
+    const result = part1(input);
+    expect(result).toEqual(answerPart1);
   });
 
   it('Calculates part 2 correctly', () => {
-    const result = part2(exampleInputOne);
-    expect(result).toEqual(expectedAnswerPart2);
+    const result = part2(input);
+    expect(result).toEqual(answerPart2);
   });
 });

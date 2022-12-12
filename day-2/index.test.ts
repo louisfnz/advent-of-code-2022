@@ -1,22 +1,22 @@
 import {part2, part1} from './index';
 
-const exampleInputOne = `
+const input = `
 A Y
 B X
 C Z
 `;
 
-const expectedAnswerPart1 = 15;
-const expectedAnswerPart2 = 12;
+const answerPart1 = 15;
+const answerPart2 = 12;
 
 describe('Day 2', () => {
   it('Calculates part 1 correctly', () => {
-    const result = part1(exampleInputOne);
-    expect(result).toEqual(expectedAnswerPart1);
+    const result = part1(input);
+    expect(result).toEqual(answerPart1);
   });
 
   it('Calculates part 2 correctly', () => {
-    const result = part2(exampleInputOne);
-    expect(result).toEqual(expectedAnswerPart2);
+    const result = part2(input);
+    expect(result).toEqual(answerPart2);
   });
 });

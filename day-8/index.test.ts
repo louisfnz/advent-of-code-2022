@@ -1,6 +1,6 @@
 import {part2, part1} from './index';
 
-const exampleInputOne = `
+const input = `
 30373
 25512
 65332
@@ -8,17 +8,17 @@ const exampleInputOne = `
 35390
 `;
 
-const expectedAnswerPart1 = 21;
-const expectedAnswerPart2 = 8;
+const answerPart1 = 21;
+const answerPart2 = 8;
 
 describe('Day 8', () => {
   it('Calculates part 1 correctly', () => {
-    const result = part1(exampleInputOne);
-    expect(result).toEqual(expectedAnswerPart1);
+    const result = part1(input);
+    expect(result).toEqual(answerPart1);
   });
 
   it('Calculates part 2 correctly', () => {
-    const result = part2(exampleInputOne);
-    expect(result).toEqual(expectedAnswerPart2);
+    const result = part2(input);
+    expect(result).toEqual(answerPart2);
   });
 });
