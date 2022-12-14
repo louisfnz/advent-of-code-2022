@@ -41,7 +41,7 @@ export const part1 = (input: string) => {
   const packetPairs = input
     .trim()
     .split('\n\n')
-    .map((pair) => pair.split('\n').map((p) => JSON.parse(p)));
+    .map((pair) => pair.split('\n').map((p) => JSON.parse(p)) as [Packet, Packet]);
 
   return packetPairs.reduce((result, [left, right], i) => {
     if (comparePackets(left, right)) result += i + 1;
@@ -56,7 +56,7 @@ export const part2 = (input: string) => {
     .trim()
     .replaceAll('\n\n', '\n')
     .split('\n')
-    .map((s) => JSON.parse(s))
+    .map((s) => JSON.parse(s) as Packet)
     .concat([divider1, divider2]);
 
   packets.sort((a, b) => (comparePackets(a, b) ? -1 : 1));
