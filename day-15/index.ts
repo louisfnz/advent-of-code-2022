@@ -75,19 +75,16 @@ export const part2 = (input: string) => {
   for (let y = 0; y < range; y++) {
     let x = 0;
     while (x < range) {
-      const inRange = positions.reduce((furthestRange, position) => {
+      const furthestRange = positions.reduce((fr, position) => {
         const distance = manhattanDistance(position.sensor[0], position.sensor[1], x, y);
         if (distance <= position.range) {
-          furthestRange = Math.max(
-            furthestRange,
-            position.sensor[0] + position.range - Math.abs(position.sensor[1] - y),
-          );
+          fr = Math.max(fr, position.sensor[0] + position.range - Math.abs(position.sensor[1] - y));
         }
-        return furthestRange;
+        return fr;
       }, Number.MIN_SAFE_INTEGER);
 
-      if (inRange > Number.MIN_SAFE_INTEGER) {
-        x = 1 + inRange;
+      if (furthestRange > Number.MIN_SAFE_INTEGER) {
+        x = 1 + furthestRange;
         continue;
       }
 
